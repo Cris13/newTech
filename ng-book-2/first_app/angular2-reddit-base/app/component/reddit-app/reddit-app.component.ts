@@ -23,7 +23,7 @@ import { Article } from '../../component/reddit-article/article';
         </form>
 
         <div class="ui grid posts">
-        <reddit-article *ngFor="let pippo of articles" [article]="pippo"></reddit-article>
+        <reddit-article *ngFor="let pippo of sortedArticles()" [article]="pippo"></reddit-article>
         </div>
         `
     })
@@ -40,6 +40,13 @@ export class RedditApp {
     }
 
     addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
-        console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+        this.articles.push(new Article(title.value, link.value, 0));
+        title.value = '';
+        link.value = '';
+        return false;
+    }
+
+    sortedArticles(): Article[] {
+        return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
     }
 }
