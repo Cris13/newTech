@@ -1,4 +1,4 @@
-System.register(['@angular/core', '../../component/reddit-article/reddit-article.component', '../../component/reddit-article/article'], function(exports_1, context_1) {
+System.register(['@angular/core', '../../component/reddit-article/article'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,15 +10,12 @@ System.register(['@angular/core', '../../component/reddit-article/reddit-article
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, reddit_article_component_1, article_1;
+    var core_1, article_1;
     var RedditApp;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (reddit_article_component_1_1) {
-                reddit_article_component_1 = reddit_article_component_1_1;
             },
             function (article_1_1) {
                 article_1 = article_1_1;
@@ -38,7 +35,6 @@ System.register(['@angular/core', '../../component/reddit-article/reddit-article
                 RedditApp = __decorate([
                     core_1.Component({
                         selector: 'reddit',
-                        directives: [reddit_article_component_1.RedditArticleComponent],
                         template: "\n        <form class=\"ui large form segment\">\n            <h3 class=\"ui header\">Add a Link</h3>\n            <div class=\"field\">\n                <label for=\"title\">Title:</label>\n                <input name=\"title\" #newtitle>\n            </div>\n            <div class=\"field\">\n                <label for=\"link\">Link:</label>\n                <input name=\"link\" #newlink>\n            </div>\n            <button (click)=\"addArticle(newtitle, newlink)\"\n                class=\"ui positive right floated button\">\n                Submit link\n            </button>\n        </form>\n\n        <div class=\"ui grid posts\">\n        <reddit-article *ngFor=\"let pippo of articles\" [article]=\"pippo\"></reddit-article>\n        </div>\n        "
                     }), 
                     __metadata('design:paramtypes', [])

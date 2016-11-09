@@ -5,7 +5,6 @@ import { Article } from '../../component/reddit-article/article';
 
 @Component({
     selector: 'reddit',
-    directives: [RedditArticleComponent],
     template: `
         <form class="ui large form segment">
             <h3 class="ui header">Add a Link</h3>
@@ -42,4 +41,5 @@ export class RedditApp {
 
     addArticle(title: HTMLInputElement, link: HTMLInputElement): void {
         console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    }
 }
